@@ -5,57 +5,49 @@
  * Created on March 10, 2015, 9:22 PM
  */
 
-#include "IRCConn.h" 
+
 #include <string>
 #include<iostream>
-#include<apis/cpIRC/IRC.h>
+#include"apis/cpIRC/IRC.h"
 #include<pthread.h>
+#include "IRCConn.h" 
 
 using namespace std;
 
-IRC conn;
-char* channel;
 
-IRCConn::IRCConn(char* ip,int port,char* nick,char* pass,char* chan,char* user ,char* name) {
-        channel=chan;
-        conn.hook_irc_command("irc response", &printReply);
-        conn.start(ip, port, nick,user,name,pass);
+
+IRCConn::IRCConn(char* ip,int port,char* nick,char* pass,char* chan,char* user ,char* name):conn(),channel(chan) {
+        char* e0 = "irc response";
+        //conn.hook_irc_command(e0, &printReply);
+        conn.start(ip, port,nick,user,name,pass);
         
         pthread_t msglpthrd;
-	pthread_create (msglpthrd ,NULL ,actMsgLoop ,NULL);
+	pthread_create(&msglpthrd ,NULL ,actMsgLoop ,NULL);
         
         conn.message_loop();
-        conn.join(chan);   
+        conn.join(channel);  
 }
 
-/*struct irc_reply_data
-	{
-		char* nick;
-		char* ident;
-		char* host;
-		char* target; /* This variable contains things such as the target of a PRIVMSG/NOTICE message, 
-				 ie. the channel or person it was sent to 
-	*/
+int IRCConn::printReply(char* params, irc_reply_data* hostd, void* conn){
 
-printReply(char* params, irc_reply_data* hostd, void* conn){
-
-    cout<<irc_reply_data.nick<<":>|"<<params<<endl;
+    //cout << irc_reply_data.nick << ":>|" << params << endl;
 
 }
 
-sendData(char* data){
+void IRCConn::sendData(char* data){
     conn.privmsg(data);
 }
 
-getConn(){
+IRC IRCConn::getConn(){
     return conn;
 }
 
-actMsgLoop(){
+void *IRCConn::actMsgLoop(){
     conn.message_loop();
-    pthread_exit();
+    pthread_exit(NULL);
 }
 
-endConn(){
- conn.quit("Disconnecting");   
+void IRCConn::endConn(){
+    char c[16] = "Disconnecting";
+ conn.quit(&c);   
 }

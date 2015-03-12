@@ -1,19 +1,19 @@
 /* 
  * File:   main.cpp
- * Author: admin
+ * Author: Jtsfour
  *
  * Created on March 10, 2015, 8:30 PM
  */
 
 #include <cstdlib>
-#include "IRCConn.h"
+#include "IRCConnback.h"
 using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    //IRCConn ircc("irc.esper.net",6667,"da_bot","","#kerbalspaceflight");
+    IRCConn ircc("irc.esper.net",6667,"da_bot","","#kerbalspaceflight");
     return 0;
 }
 

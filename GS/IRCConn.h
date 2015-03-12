@@ -2,32 +2,27 @@
  * File:   IRCConn.h
  * Author: admin
  *
- * Created on March 10, 2015, 9:21 PM
+ * Created on March 12, 2015, 4:06 PM
  */
 
-/*#pragma once
-#pragma comment(lib,"Ws2_32.lib")
 #ifndef IRCCONN_H
 #define	IRCCONN_H
-#define SCK_VERSION2 0x0202
-#include<sdkddkver.h>
-#include<WinSock2.h>
-#include<Windows.h>
- * */
-#include<iostream>
-#include<string>
+
+//#include"apis/cpIRC/IRC.h"
 
 class IRCConn {
 public:
-    IRCConn(char* url,int port,const char* nick,char* pass,char* chan);
-    printReply(char* params, irc_reply_data* hostd, void* conn);
-    sendData(char*);
+    IRCConn(char* ip,int port,char* nick,char* pass,char* chan,char* user ,char* name);
+    int printReply(char* params, irc_reply_data* hostd, void* conn);
+    void sendData(char*);
     IRC getConn();
-    endConn();
+    void endConn();
     
 private:
-actMsgLoop();
+void* actMsgLoop();
+IRC conn;
+char* channel;
 };
 
-//#endif	/* IRCCONN_H */
+#endif	/* IRCCONN_H */
 
