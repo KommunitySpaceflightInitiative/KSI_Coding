@@ -12,6 +12,7 @@
 #include<string>
 #include <stdlib.h> 
 #include<iostream>
+#include "CommandObjectList.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ DataController::DataController() {
     
 }
 
-void DataController::uploadData(char* carray){
+void DataController::uploadRawData(char* carray){
 
 }
 

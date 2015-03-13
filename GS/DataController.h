@@ -7,14 +7,19 @@
 
 #ifndef DATACONTROLLER_H
 #define	DATACONTROLLER_H
-
 #include<vector>
+#include<string>
 
 class DataController {
 public:
     DataController();
+    void rawByteParser(unsigned char* data);
     struct jpg_clean_r cleanJPGData(char* carray);
-    void uploadData(char* c);
+    void uploadRawData(char* c);
+    void uploadTempData(char* c);
+    void uploadSciData(char* c);
+    void uploadPosData(char* c);
+    void uploadJPGData(char* c);
     
     
     
