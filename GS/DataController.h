@@ -9,17 +9,19 @@
 #define	DATACONTROLLER_H
 #include<vector>
 #include<string>
+#include "Encoder.h"
 
 class DataController {
 public:
     DataController();
-    void rawByteParser(unsigned char* data);
     struct jpg_clean_r cleanJPGData(char* carray);
     void uploadRawData(char* c);
     void uploadTempData(char* c);
     void uploadSciData(char* c);
     void uploadPosData(char* c);
     void uploadJPGData(char* c);
+    void uploadDPacket(d_packet pkt);
+    
     
     
     
@@ -27,7 +29,7 @@ public:
     
 private:
     
-
+  
 };
 
 struct jpg_clean_r {

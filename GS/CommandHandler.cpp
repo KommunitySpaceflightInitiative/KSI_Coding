@@ -11,4 +11,12 @@ CommandHandler::CommandHandler() {
 
 }
 
+void CommandHandler::parseCommandFromTXT(char* c){
+
+}
+
+void CommandHandler::parseCommandFromByte(unsigned char* c){
+
+}
+
 

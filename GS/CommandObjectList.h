@@ -1,5 +1,5 @@
 /* 
- * File:   CommandStructList.h
+ * File:   CommandObjectList.h
  * Author: admin
  *
  * Created on March 13, 2015, 2:32 AM

@@ -11,7 +11,7 @@
 class Reciever {
 public:
     Reciever();
-
+    char* receive();
 private:
 
 };

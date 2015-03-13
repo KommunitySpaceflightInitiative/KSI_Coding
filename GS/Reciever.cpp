@@ -11,3 +11,9 @@ Reciever::Reciever() {
     
 }
 
+char* Reciever::receive(){
+
+}
+
+
+

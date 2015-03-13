@@ -11,8 +11,9 @@
 class CommandHandler {
 public:
     CommandHandler();
-    CommandHandler(const CommandHandler& orig);
-    virtual ~CommandHandler();
+    void sendCommand();
+    void parseCommandFromTXT(char* c);
+    void parseCommandFromByte(unsigned char* c);
 private:
 
 };

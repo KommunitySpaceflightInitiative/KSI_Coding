@@ -13,6 +13,7 @@
 #include <stdlib.h> 
 #include<iostream>
 #include "CommandObjectList.h"
+#include "Encoder.h"
 
 using namespace std;
 
@@ -87,3 +88,47 @@ jpg_clean_r DataController::cleanJPGData(char* carray){
     
     
 }
+
+void DataController::uploadTempData(char* c){
+    
+}
+
+void DataController::uploadSciData(char* c){
+    
+}
+
+void DataController::uploadPosData(char* c){
+    
+}
+
+void DataController::uploadJPGData(char* c){
+    
+}
+
+/*Takes a decoded data packet and formats then uploads it
+ */
+void DataController::uploadDPacket(d_packet pkt){
+    
+    switch(pkt.type){
+        case 1 : 
+            uploadJPGData(pkt.data);
+            break;
+        case 2 :
+            uploadPosData(pkt.data);
+            break;
+        case 3 :
+            uploadSciData(pkt.data);
+            break;
+        case 4 :
+            uploadTempData(pkt.data);
+            break;
+        case 5 :
+            uploadRawData(pkt.data);
+            break;
+            
+            
+    }
+    
+}
+
+
