@@ -1,33 +1,21 @@
 /* 
- * File:   Uploader.cpp
+ * File:   IRCComm.cpp
  * Author: admin
  * 
- * Created on March 12, 2015, 9:59 PM
+ * Created on March 13, 2015, 3:55 PM
  */
 
-#include "Uploader.h"
+#include "IRCComm.h"
 
-Uploader::Uploader(char* ip,int port,char* nick,char* pass,char* chan,char* user ,char* name){
-
-}
-
-void Uploader::endConn(){
+IRCComm::IRCComm(){
 
 }
 
-bool Uploader::uploadToBeDetermined0(char* c){
+IRCComm::IRCComm(char* ip,int port,char* nick,char* pass,char* chan,char* user ,char* name) {
 
 }
 
-bool Uploader::uploadToBeDetermined1(char* c){
-
-}
-
-bool Uploader::uploadToBeDetermined2(char* c){
-
-}
-
-bool Uploader::uploadToBeDetermined3(char* c){
-
+void IRCComm::sendData(char* c){
+    
 }
 

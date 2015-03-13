@@ -14,10 +14,11 @@
 #include<iostream>
 #include "CommandObjectList.h"
 #include "Encoder.h"
+#include "IRCComm.h"
 
 using namespace std;
 
-DataController::DataController() {
+DataController::DataController(){
     
 }
 
@@ -31,7 +32,7 @@ void DataController::uploadRawData(char* carray){
  * for a data piece to be considered complete it must start with 4 digits and end in a semicolon 
  * this will be changed depending on the final data encoding method we choose
  */
-jpg_clean_r DataController::cleanJPGData(char* carray){
+/*jpg_clean_r DataController::cleanJPGData(char* carray){
     int cid[sizeof(carray)/12*4+1];             //array of the ids of corrupted data pieces
     vector<char> cchar;//Clean chars the ones that get uploaded
     int idcount = 1;
@@ -87,7 +88,7 @@ jpg_clean_r DataController::cleanJPGData(char* carray){
     robj.cchars=c0;
     
     
-}
+}*/
 
 void DataController::uploadTempData(char* c){
     
@@ -102,7 +103,19 @@ void DataController::uploadPosData(char* c){
 }
 
 void DataController::uploadJPGData(char* c){
-    
+    string init = "/JPG:";
+    int mi=0;
+    int totallen = sizeof(c)+init.length();
+    char formc[totallen];
+    for(int i=0;i<totallen;i++){
+        if(i<init.length()){
+            formc[i]=init.at(i);
+        }else{
+            formc[i]=c[mi];
+            mi++;
+        }
+    }
+    irc.sendData(formc);
 }
 
 /*Takes a decoded data packet and formats then uploads it

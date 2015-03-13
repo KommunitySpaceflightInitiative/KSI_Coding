@@ -10,16 +10,12 @@
 #include<vector>
 #include<string>
 #include "Encoder.h"
+#include "IRCComm.h"
 
 class DataController {
 public:
     DataController();
     struct jpg_clean_r cleanJPGData(char* carray);
-    void uploadRawData(char* c);
-    void uploadTempData(char* c);
-    void uploadSciData(char* c);
-    void uploadPosData(char* c);
-    void uploadJPGData(char* c);
     void uploadDPacket(d_packet pkt);
     
     
@@ -28,7 +24,12 @@ public:
     
     
 private:
-    
+    void uploadRawData(char* c);
+    void uploadTempData(char* c);
+    void uploadSciData(char* c);
+    void uploadPosData(char* c);
+    void uploadJPGData(char* c);
+    IRCComm irc;
   
 };
 
