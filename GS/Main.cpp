@@ -6,14 +6,13 @@
  */
 
 #include <cstdlib>
-#include "IRCConnback.h"
 using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    IRCConn ircc("irc.esper.net",6667,"da_bot","","#kerbalspaceflight");
+    
     return 0;
 }
 
