@@ -8,15 +8,27 @@
 #ifndef DATACONTROLLER_H
 #define	DATACONTROLLER_H
 
+#include<vector>
+
 class DataController {
 public:
     DataController();
-    int* uploadJPGData(char* c);
+    struct jpg_clean_r cleanJPGData(char* carray);
     void uploadData(char* c);
+    
+    
+    
+    
     
 private:
     
 
+};
+
+struct jpg_clean_r {
+    int* corruptids;
+    char* cchars;
+    bool anycorrupt;
 };
 
 #endif	/* DATACONTROLLER_H */

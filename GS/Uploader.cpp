@@ -7,7 +7,27 @@
 
 #include "Uploader.h"
 
-Uploader::Uploader() {
+Uploader::Uploader(char* ip,int port,char* nick,char* pass,char* chan,char* user ,char* name){
+
+}
+
+void Uploader::endConn(){
+
+}
+
+bool Uploader::uploadToBeDetermined0(char* c){
+
+}
+
+bool Uploader::uploadToBeDetermined1(char* c){
+
+}
+
+bool Uploader::uploadToBeDetermined2(char* c){
+
+}
+
+bool Uploader::uploadToBeDetermined3(char* c){
 
 }
 

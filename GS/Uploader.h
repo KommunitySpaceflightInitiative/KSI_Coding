@@ -10,13 +10,15 @@
 
 class Uploader {
 public:
-    Uploader();
+    Uploader(char* ip,int port,char* nick,char* pass,char* chan,char* user ,char* name);
+    void endConn();
     bool uploadJPG(char* c);
     bool uploadRaw(char* c);
     bool uploadToBeDetermined0(char* c);
     bool uploadToBeDetermined1(char* c);
     bool uploadToBeDetermined2(char* c);
     bool uploadToBeDetermined3(char* c);
+    
     
     
 private:
