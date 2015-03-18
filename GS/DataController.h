@@ -19,11 +19,14 @@ public:
     struct jpg_clean_r cleanJPGData(char* carray);
     void uploadDPacket(d_packet pkt);
     void initThreadLoop(int refresh,thread_c* dctoirc,thread_c* rectodc,thread_c* chtodc);
+    void parseDataFromCH(char* data);
+    void parseDataFromREC(char* data);
 
     //vars
     bool thread;
     bool msgtosend;
     char msg[200];
+    dc_msg msgs;
 
 
 

@@ -8,4 +8,11 @@ struct thread_c{
     std::string from;
 };
 
+struct dc_msg{
+    std::string to;
+    char data[100];
+
+
+};
+
 #endif // THREADCOMM_H

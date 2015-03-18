@@ -83,18 +83,39 @@ void DataController::uploadDPacket(d_packet pkt){
     }
 }
 
+    void DataController::parseDataFromCH(char* data){
+
+
+
+    }
+
+    void DataController::parseDataFromREC(char* data){
+
+
+
+    }
+
     void DataController::initThreadLoop(int refresh,thread_c* dctoirc,thread_c* rectodc,thread_c* chtodc){
         thread=true;
         while(thread){
             if(rectodc->unread){
-
+                rectodc->unread=false;
             }
             if(chtodc->unread){
-
+                parseDataFromCH(chtodc->data);
+                chtodc->unread=false;
             }
             if(msgtosend){
-
+                if(msgs.to=="irc"){
+                    for(int i=0;i<sizeof(msgs.data);i++){
+                        dctoirc->data[i]=msgs.data[i];
+                    }
+                    dctoirc->from="dc";
+                    dctoirc->unread=true;
+                }
+                msgtosend=false;
             }
+            //will put a  sleep(refresh) call here
         }
 
     }
