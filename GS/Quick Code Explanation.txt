@@ -1,8 +1,6 @@
 Note:I will comment in the code itself but this is a quick overview i will update as i go on:
 
-Basically this is a simple multithreaded program so Start or Main for now starts the threads and points them to the thread loops the threads will be using shared memory for communications 
-
-in the form of the packet structure pointers that i created so each thread runs on a loop with the given refresh rate in milliseconds next DataController controls inputs and outputs of all threads and formats communications accordingly
+Basically this is a simple multithreaded program so Start or Main for now starts the threads and points them to the thread loops the threads will be using shared memory for communications in the form of the packet structure pointers that i created so each thread runs on a loop with the given refresh rate in milliseconds next DataController controls inputs and outputs of all threads and formats communications accordingly
 
 IRComm is the irc interface we will build I think i will remove CommandHandler for different reasons Transmit/Recieve are for interfacing with antenna/receiver thingy I will also build a LCD driver class for interfacing with the onboard LCD
 
@@ -11,4 +9,3 @@ More Notes:
 We need to build this program with minimal classes we need to make it work effectively without super complex things that can easily go wrong we want to build this so we dont need to update this software 
 
 lets make MainPC/Server do all the work these will be the simplest of simple communication interfaces
-
